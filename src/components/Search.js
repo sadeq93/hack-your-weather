@@ -2,11 +2,17 @@ import React from "react";
 const Search = (props) => {
   return (
     <div>
-      <label>
-        City Name :
-        <input onChange={props.changeName} />
-      </label>
-      <button onClick={props.fetchData}>Search</button>
+      <input
+        value={props.cityName}
+        onChange={props.changeName}
+        placeholder="City Name"
+      />
+      <button
+        onClick={props.fetchData}
+        disabled={props.cityName === "" ? true : false}
+      >
+        Search
+      </button>
     </div>
   );
 };

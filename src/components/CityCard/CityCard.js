@@ -1,4 +1,5 @@
 import React from "react";
+import "../CityCard/CityCard.css";
 const CityCard = ({ cityCardHolder }) => {
   const { weather, hasError, isLoading, validName } = cityCardHolder;
   return (
@@ -6,13 +7,13 @@ const CityCard = ({ cityCardHolder }) => {
       {isLoading && <p>Loading ... </p>}
       {weather.name && !hasError && (
         <div className="CityCard">
-          <h6>{weather.name}</h6>
-          <h6>{weather.sys.country}</h6>
-          <p>{weather.weather.desciption}</p>
-          <p>{weather.main.temp_max}</p>
-          <p>{weather.main.temp_min}</p>
+          <p>City : {weather.name}</p>
+          <p>country :{weather.sys.country}</p>
+          <p>{weather.weather[0].description}</p>
+          <p>Max :{weather.main.temp_max}</p>
+          <p>Min :{weather.main.temp_min}</p>
           <p>
-            {weather.coord.lon} , {weather.coord.lat}
+            Location : {weather.coord.lon} , {weather.coord.lat}
           </p>
         </div>
       )}
