@@ -15,9 +15,9 @@ const CityWeatherContainer = () => {
       const res = await fetch(URL);
       const data = await res.json();
       setWeather(data);
-      {
+      
         !data.name && setvalidName(true);
-      }
+      
       setLoading(false);
     } catch (err) {
       console.error(err);
