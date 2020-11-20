@@ -11,7 +11,7 @@ const CityWeatherContainer = () => {
     try {
       setLoading(true);
       const API_Key = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
-      const URL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=metric`;
+      const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}&units=metric`;
       const res = await fetch(URL);
       const data = await res.json();
       setWeather(data);
